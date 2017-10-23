@@ -7,8 +7,8 @@ ENV VERSION=0.15.37
 RUN apt-get update && \
 	apt-get -y upgrade && \
 	apt-get -y install curl pwgen && \
-	curl -sSL https://www.factorio.com/get-download/$VERSION/headless/linux64 -o /tmp/factorio_headless_x64_$VERSION.tar.xz && \
-	tar xf /tmp/factorio_headless_x64_$VERSION.tar.xz --directory /opt && \
+	curl -sSL https://www.factorio.com/get-download/$VERSION/headless/linux64 -o /tmp/factorio_headless_x64_$VERSION.tar.xz
+RUN tar xf /tmp/factorio_headless_x64_$VERSION.tar.xz --directory /opt && \
 	rm /tmp/factorio_headless_x64_$VERSION.tar.xz && \
 	ln -s /factorio/saves /opt/factorio/saves && \
 	ln -s /factorio/mods /opt/factorio/mods && \
